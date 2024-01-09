@@ -14,11 +14,14 @@
             BST.Insert(1);
             BST.Insert(5);
             BST.Insert(3);
+            BST.Insert(2);
             BST.Insert(4);
             BST.Insert(7);
+            BST.Insert(6);
+            BST.Insert(7);
             BST.Insert(9);
-            BST.Remove(7);
-            BTNode<int> d = BST.Search(5);
+            BST.Remove(12);
+            BTNode<int> d = BST.Search(1);
             Console.Write(d);
         }
     }

@@ -48,49 +48,60 @@ namespace ConsoleApp1
             BTNode<T> pNode = root;
             if (cNode.Compare(data) == 0)
                 dNode = cNode;
-            while (dNode == null && cNode != null)
+            else
             {
-                pNode = cNode;
-                if (cNode.Compare(data) > 0)
-                    cNode = cNode.GetLeftNode();
-                else if (cNode.Compare(data) < 0)
-                    cNode = cNode.GetRightNode();
-                if(cNode.GetData().Equals(data))
-                    dNode = cNode;
+                while ( cNode != null && cNode.Compare(data) != 0)
+                {
+                    pNode = cNode;
+                    if (cNode.Compare(data) > 0)
+                        cNode = cNode.GetLeftNode();
+                    else if (cNode.Compare(data) < 0)
+                        cNode = cNode.GetRightNode();
+                }
             }
+            dNode = cNode;
+
             if (dNode == null)
                 return;
 
             if (dNode.GetLeftNode() == null && dNode.GetRightNode() == null)
             {
-                pNode.MakeLeftNode();
-                pNode.MakeRightNode();
+                if(pNode.GetLeftNode() == dNode)
+                    pNode.MakeLeftNode();
+                else
+                    pNode.MakeRightNode();
             }
             else if (dNode.GetLeftNode() == null || dNode.GetRightNode() == null)
             {
                 BTNode<T> mNode = null;
                 if (dNode.GetLeftNode() == null)
-                {
                     mNode = dNode.GetRightNode();
-                }
                 else
-                {
                     mNode = dNode.GetLeftNode();
-                }
+
                 if (pNode.GetLeftNode() == dNode)
-                {
                     pNode.MakeLeftNode(mNode);
-                }
                 else
-                {
                     pNode.MakeRightNode(mNode);
-                }
             }
             else
             {
+                BTNode<T> mpNode = dNode;
+                BTNode<T> mNode = dNode.GetRightNode();
+                while (mNode.GetLeftNode() != null)
+                {
+                    mpNode = mNode;
+                    mNode = mNode.GetLeftNode();
+                }
 
+                dNode.SetData(mNode.GetData());
 
+                if (mpNode.GetLeftNode() == mNode)
+                    mpNode.MakeLeftNode();
+                else
+                    mpNode.MakeRightNode();
 
+                mpNode.MakeLeftNode(mNode.GetRightNode());
             }
         }
         BTNode<T> Search(BTNode<T> cNode, T target)
