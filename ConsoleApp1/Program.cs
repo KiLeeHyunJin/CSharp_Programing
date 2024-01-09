@@ -6,6 +6,10 @@
         {
             Console.WriteLine("Hello, World!");
             Console.WriteLine("S");
+            Console.WriteLine("S");
+            Console.WriteLine("S");
+            Console.WriteLine("S");
+            Console.WriteLine("S");
         }
     }
 }
