@@ -13,7 +13,11 @@
             Console.WriteLine("SS");
             Console.WriteLine("SS");
             Console.WriteLine("SS");
-            Console.WriteLine("SS");
+            Console.WriteLine("D");
+            Console.WriteLine("D");
+            Console.WriteLine("D");
+            Console.WriteLine("D");
+            Console.WriteLine("D");
         }
     }
 }
