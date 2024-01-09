@@ -10,6 +10,10 @@
             Console.WriteLine("S");
             Console.WriteLine("S");
             Console.WriteLine("S");
+            Console.WriteLine("SS");
+            Console.WriteLine("SS");
+            Console.WriteLine("SS");
+            Console.WriteLine("SS");
         }
     }
 }
