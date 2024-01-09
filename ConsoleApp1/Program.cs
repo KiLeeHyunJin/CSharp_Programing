@@ -7,16 +7,7 @@
             Console.WriteLine("Hello, World!");
             Console.WriteLine("S");
             Console.WriteLine("S");
-            Console.WriteLine("S");
-            Console.WriteLine("S");
-            Console.WriteLine("S");
-            Console.WriteLine("SS");
-            Console.WriteLine("SS");
-            Console.WriteLine("SS");
-            Console.WriteLine("D");
-            Console.WriteLine("D");
-            Console.WriteLine("D");
-            Console.WriteLine("D");
+   
             Console.WriteLine("D");
         }
     }
