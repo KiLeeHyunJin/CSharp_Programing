@@ -26,9 +26,7 @@ namespace ConsoleApp1._2024_01_11
         public void Add(T data)
         {
             if(IsFull)
-            {
                 Grow();
-            }
             arr[count] = data;
             Console.WriteLine($"{data}를 추가합니다.");
             count++;
