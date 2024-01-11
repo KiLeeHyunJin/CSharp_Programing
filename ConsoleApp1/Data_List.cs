@@ -65,9 +65,8 @@ namespace ConsoleApp1
         {
             if (idx < 0 || idx >= count)
                 throw new ArgumentOutOfRangeException("index");
-
-            Array.Copy(items, idx + 1, items, idx, count - idx);
             count--;
+            Array.Copy(items, idx + 1, items, idx, count - idx);
         }
 
         public bool Remove(T item) 

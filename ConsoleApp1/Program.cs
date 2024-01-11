@@ -4,18 +4,32 @@
     {
         static void Main(string[] args)
         {
-            //int input = 0;
-            //do
-            //{
-            //    Console.Write("1 에서 9 사이의 수를 입력하세요 : ");
-            //    string text = Console.ReadLine();
-            //    int.TryParse(text, out input);
-            //} while (input < 1 || 9 < input);
-            int[] arr = {10};
-            foreach (var item in solution(10000))
+            ConsoleApp1._2024_01_11.DataList<int> list = new _2024_01_11.DataList<int>();
+            int input = int.Parse(Console.ReadLine());
+            for (int i = 0; i <= input; i++)
+                list.Add(i);
+            list.Add(0);
+
+            list.Remove(5);
+            for (int i = 0; i < list.Count; i++)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(list[i]);
             }
+
+
+            list.Add(1);
+            list.Add(6);
+            list.Add(7);
+            list.Add(8);
+            list.Add(3);
+            list.Add(2);
+            list.InsertRemove(7);
+
+
+            ConsoleApp1._2024_01_11.Inventory inventory = new _2024_01_11.Inventory();
+            ConsoleApp1._2024_01_11.Item item = new _2024_01_11.Item();
+            inventory.AddItem(item); 
+            inventory.RemoveItem(item); 
         }
         
         static int[] solution(int n)
