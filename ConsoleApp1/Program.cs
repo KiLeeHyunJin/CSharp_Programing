@@ -1,4 +1,6 @@
-﻿namespace ConsoleApp1
+﻿using ConsoleApp1.Programmers;
+
+namespace ConsoleApp1
 {
     internal class Program
     {
@@ -11,13 +13,17 @@
             //    string text = Console.ReadLine();
             //    int.TryParse(text, out input);
             //} while (input < 1 || 9 < input);
-            int[] arr = {10};
-            foreach (var item in solution(10000))
+            int[] arr = { 1, 2, 3, 4, 5, 6 };
+            //oreach (var item in solution(arr, 2))
             {
-                Console.WriteLine(item);
+                ReversString reversString = new ReversString();
+                Console.WriteLine(reversString.solution1("3+4"));
+
             }
         }
         
+
+
         static int[] solution(int n)
         {
             int value = n;
