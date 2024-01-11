@@ -16,7 +16,6 @@
                 Console.WriteLine(list[i]);
             }
 
-
             list.Add(1);
             list.Add(6);
             list.Add(7);
@@ -49,13 +48,12 @@
             }
             for (int i = 0; i < list.Count-1; i++)
             {
-                re:
                 if(i+1 < list.Count)
                 {
                     if (list[i] == list[i + 1])
                     {
                         list.RemoveAt(i + 1);
-                        goto re;
+                        i--;
                     }
                 }
 
