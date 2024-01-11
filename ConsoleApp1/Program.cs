@@ -4,23 +4,102 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-            Console.WriteLine("S");
-            Console.WriteLine("S");
-   
-            Console.WriteLine("D");
-
-            BTree<int> BST = new BTree<int>();
-            for (int i = 11; i > 0 ; i--)
+            //int input = 0;
+            //do
+            //{
+            //    Console.Write("1 에서 9 사이의 수를 입력하세요 : ");
+            //    string text = Console.ReadLine();
+            //    int.TryParse(text, out input);
+            //} while (input < 1 || 9 < input);
+            int[] arr = {10};
+            foreach (var item in solution(10000))
             {
-                BST.Insert(i);
+                Console.WriteLine(item);
             }
-
-            Console.Write(BST.root);
         }
-        public struct ReadKey
+        
+        static int[] solution(int n)
         {
-            public char KeyChar;
-         }
+            int value = n;
+            int[] answer = new int[] { };
+            List<int> list = new List<int>();
+            for (int i = 2; i <= value; i++)
+            {
+                re:
+                if (n % i == 0)
+                {
+                    n /= i;
+                    list.Add(i);
+                    goto re;
+                }
+            }
+            for (int i = 0; i < list.Count-1; i++)
+            {
+                re:
+                if(i+1 < list.Count)
+                {
+                    if (list[i] == list[i + 1])
+                    {
+                        list.RemoveAt(i + 1);
+                        goto re;
+                    }
+                }
+
+            }
+            return list.ToArray();
+        }
+
+        static string solution(string bin1, string bin2)
+        {
+            string answer = "";
+            int temp = int.Parse(bin1);
+            int sour = int.Parse(bin2);
+            int up = 0;
+            int save = 0;
+            int count = 1;
+            answer = (temp + sour).ToString();
+
+            char[] charArr = answer.ToArray<char>();
+            Array.Reverse(charArr);
+            answer = new string(charArr);
+            //answer = new string(answer.Reverse<char>().ToArray());
+            for (int i = 0; i < answer.Length; i++)
+            {
+                if (answer[i] == '0')
+                {
+                    if (up == 1)
+                    {
+                        save += count;
+                        up = 0;
+                    }
+                }
+                if (answer[i] == '1')
+                {
+                    if(up == 0)
+                        save +=  count;
+                    else
+                        up = 1;
+                }
+                else if (answer[i] == '2')
+                {
+
+                    if(up == 1)
+                    {
+                        save += count;
+                        up = 1;
+                    }
+                    else
+                        up = 1;
+                }
+                count *= 10;
+            }
+            if (up == 1)
+                save += count;
+            return save.ToString();
+        }
+        int Multi(int left, int right) { return left * right; }
+        float Multi(float left, float right) { return left * right; }
+        double Multi(double left, double right) { return left * right; }
+
     }
 }
