@@ -1,34 +1,39 @@
-﻿namespace ConsoleApp1
+﻿using ConsoleApp1._2024_01_12;
+
+namespace ConsoleApp1
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            ConsoleApp1._2024_01_11.DataList<int> list = new _2024_01_11.DataList<int>();
-            int input = int.Parse(Console.ReadLine());
-            for (int i = 0; i <= input; i++)
-                list.Add(i);
-            list.Add(0);
+            //ConsoleApp1._2024_01_11.DataList<int> list = new _2024_01_11.DataList<int>();
+            //int input = int.Parse(Console.ReadLine());
+            //for (int i = 0; i <= input; i++)
+            //    list.Add(i);
+            //list.Add(0);
 
-            list.Remove(5);
-            for (int i = 0; i < list.Count; i++)
-            {
-                Console.WriteLine(list[i]);
-            }
+            //list.Remove(5);
+            //for (int i = 0; i < list.Count; i++)
+            //{
+            //    Console.WriteLine(list[i]);
+            //}
 
-            list.Add(1);
-            list.Add(6);
-            list.Add(7);
-            list.Add(8);
-            list.Add(3);
-            list.Add(2);
-            list.InsertRemove(7);
+            //list.Add(1);
+            //list.Add(6);
+            //list.Add(7);
+            //list.Add(8);
+            //list.Add(3);
+            //list.Add(2);
+            //list.InsertRemove(7);
 
 
-            ConsoleApp1._2024_01_11.Inventory inventory = new _2024_01_11.Inventory();
-            ConsoleApp1._2024_01_11.Item item = new _2024_01_11.Item();
-            inventory.AddItem(item); 
-            inventory.RemoveItem(item); 
+            //ConsoleApp1._2024_01_11.Inventory inventory = new _2024_01_11.Inventory();
+            //ConsoleApp1._2024_01_11.Item item = new _2024_01_11.Item();
+            //inventory.AddItem(item); 
+            //inventory.RemoveItem(item); 
+
+            _01_12_HW _01_12_HW = new _01_12_HW();
+            _01_12_HW.OsefusArray(7,3);
         }
         
         static int[] solution(int n)
