@@ -16,10 +16,13 @@ namespace ConsoleApp1
             int[] arr = { 1, 2, 3, 4, 5, 6 };
             //oreach (var item in solution(arr, 2))
             {
-                ReversString reversString = new ReversString();
-                Console.WriteLine(reversString.solution1("3+4"));
+                //CheckTriangle reversString = new CheckTriangle();
+                //int[] arr2 = { 2,2 };
+                //Console.WriteLine(reversString.solution(arr2));
 
             }
+            DataStruct dataStruct = new DataStruct();
+            dataStruct.Test();
         }
         
 
