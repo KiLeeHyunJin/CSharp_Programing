@@ -23,12 +23,99 @@ namespace ConsoleApp1
             }
             //DataStruct dataStruct = new DataStruct();
             //dataStruct.Test();
-            AnotherSpaceLanguage another = new AnotherSpaceLanguage();
-            string[] str = { "p", "o", "s" };
-            string[] atr = { "sod", "eocd", "qixm", "adio", "soo" };
-            Console.Write(another.solution(str, atr ));
+            //AnotherSpaceLanguage another = new AnotherSpaceLanguage();
+            //string[] str = { "p", "o", "s" };
+            //string[] atr = { "sod", "eocd", "qixm", "adio", "soo" };
+
+            //Console.Write(another.solution(str, atr ));
+            //Console.WriteLine(TestCode());
+            TestCode();
+        }
+        static void TestCode()
+        {
+            int n;
+            n = int.Parse(Console.ReadLine());
+            int[] data = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                data[i] = int.Parse(Console.ReadLine());
+            }
+            int[] list = new int[n];
+            int idx = 0;
+            for (int i = 0; i < n; i++)
+            {
+                if(idx == 0 || data[i] > list[idx - 1])
+                {
+                    list[idx++] = data[i];
+                }
+                else
+                {
+                    int left = 0;
+                    int right = idx;
+                    int pos = 0;
+                    while(left <= right)
+                    {
+                        int mid = (left + right) / 2;
+                        if (list[mid] >= data[i])
+                        {
+                            right = mid - 1;
+                            pos = mid;
+                        }
+                        else
+                        {
+                            left = mid + 1;
+                        }
+                    }
+                    list[pos] = data[i];
+                }
+            }
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
         }
         
+        static long AverageLevel()
+        {
+            int dataSize = 1000000;
+            int n, k;
+            int.TryParse(Console.ReadLine(),out n);
+            int.TryParse(Console.ReadLine(),out k);
+            int[] arr = new int[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                arr[i] = int.Parse(Console.ReadLine());
+            }
+            Array.Sort(arr);
+            int findNum;
+            long answer = 0;
+
+            int left = arr[0];
+            int right = arr[0] + k;
+            while (left <= right) 
+            {
+                int mid = (left + right) / 2;
+                long added = 0;
+                for (int i = 0; i < n; i++)
+                {
+                    if(mid > arr[i])
+                    {
+                        added += mid - arr[i];
+                    }
+                }
+                if(added <= k)
+                {
+                    left = mid + 1;
+                    answer = mid > answer ? mid : answer;
+                }
+                else
+                {
+                    right = mid - 1;
+                }
+            }
+            return + answer;
+        }
 
 
         static int[] solution(int n)
