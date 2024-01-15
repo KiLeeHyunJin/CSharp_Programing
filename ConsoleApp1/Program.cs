@@ -21,8 +21,12 @@ namespace ConsoleApp1
                 //Console.WriteLine(reversString.solution(arr2));
 
             }
-            DataStruct dataStruct = new DataStruct();
-            dataStruct.Test();
+            //DataStruct dataStruct = new DataStruct();
+            //dataStruct.Test();
+            AnotherSpaceLanguage another = new AnotherSpaceLanguage();
+            string[] str = { "p", "o", "s" };
+            string[] atr = { "sod", "eocd", "qixm", "adio", "soo" };
+            Console.Write(another.solution(str, atr ));
         }
         
 
