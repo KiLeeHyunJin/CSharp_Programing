@@ -1,4 +1,5 @@
 ﻿using ConsoleApp1._2024_01_12;
+using System.Drawing;
 
 namespace ConsoleApp1
 {
@@ -32,8 +33,16 @@ namespace ConsoleApp1
             //inventory.AddItem(item); 
             //inventory.RemoveItem(item); 
 
-            _01_12_HW _01_12_HW = new _01_12_HW();
-            _01_12_HW.OsefusArray(7,3);
+            //_01_12_HW _01_12_HW = new _01_12_HW();
+            //_01_12_HW.OsefusArray(7,3);\
+            _2024_01_15._01_15_HW _01_15_ = new _2024_01_15._01_15_HW();
+            
+           // _01_15_.IsOk(Console.ReadLine());
+            int[] arr = { 4, 4, 12, 10, 2, 10 };
+            foreach (var item in _01_15_.ProcessJob(arr))
+            {
+                Console.WriteLine(item);
+            }
         }
         
         static int[] solution(int n)
