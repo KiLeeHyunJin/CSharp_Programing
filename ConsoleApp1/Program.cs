@@ -29,7 +29,10 @@ namespace ConsoleApp1
 
             //Console.Write(another.solution(str, atr ));
             //Console.WriteLine(TestCode());
-            TestCode();
+            Running running = new Running();
+            string[] str = { "mumu", "soe", "poe", "kai", "mine" };
+            string[] call = { "kai", "kai", "mine", "mine" };
+            running.solution(str,call);
         }
         static void TestCode()
         {
