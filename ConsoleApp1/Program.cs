@@ -1,4 +1,5 @@
 ﻿using ConsoleApp1._2024_01_12;
+using ConsoleApp1._2024_01_16;
 using System.Drawing;
 
 namespace ConsoleApp1
@@ -35,16 +36,19 @@ namespace ConsoleApp1
 
             //_01_12_HW _01_12_HW = new _01_12_HW();
             //_01_12_HW.OsefusArray(7,3);\
-            _2024_01_15._01_15_HW _01_15_ = new _2024_01_15._01_15_HW();
-            
-           // _01_15_.IsOk(Console.ReadLine());
-            int[] arr = { 4, 4, 12, 10, 2, 10 };
-            foreach (var item in _01_15_.ProcessJob(arr))
-            {
-                Console.WriteLine(item);
-            }
+            DataTree dataTree = new DataTree();
+            dataTree.Add(3);
+            dataTree.Add(2);
+            dataTree.Add(1);
+            dataTree.Add(5);
+            dataTree.Add(4);
+            dataTree.Add(6);
+            dataTree.Remove(5);
+            dataTree.Add(7);
+            dataTree.Contains(7);
+
         }
-        
+
         static int[] solution(int n)
         {
             int value = n;
