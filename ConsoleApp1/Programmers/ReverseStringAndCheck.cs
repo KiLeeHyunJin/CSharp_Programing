@@ -25,10 +25,6 @@ namespace ConsoleApp1.Programmers
                             isFind = true;
                             break; ;
                         }
-                        else
-                        {
-
-                        }
                     }
                 }
                 if (isFind == false)
