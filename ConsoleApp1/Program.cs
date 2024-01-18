@@ -1,6 +1,7 @@
 ﻿using ConsoleApp1._2024_01_12;
 using ConsoleApp1._2024_01_16;
 using ConsoleApp1._2024_01_17;
+using ConsoleApp1._2024_01_18;
 using System.Drawing;
 
 namespace ConsoleApp1
@@ -38,11 +39,17 @@ namespace ConsoleApp1
             //_01_12_HW _01_12_HW = new _01_12_HW();
             //_01_12_HW.OsefusArray(7,3);\
 
-            PriorityQueueCodingTest dataTree = new PriorityQueueCodingTest();
-            int[,] ints = { { 4, 60 }, { 4, 40 }, { 1, 20 }, { 2, 50 }, { 3, 30 }, { 4, 10 }, { 6, 60 } };
-            //dataTree.solution();
-            LabSchedule labSchedule1 = new LabSchedule();
-            labSchedule1.Solution();
+            //PriorityQueueCodingTest dataTree = new PriorityQueueCodingTest();
+            //int[,] ints = { { 4, 60 }, { 4, 40 }, { 1, 20 }, { 2, 50 }, { 3, 30 }, { 4, 10 }, { 6, 60 } };
+            ////dataTree.solution();
+            //LabSchedule labSchedule1 = new LabSchedule();
+            //labSchedule1.Solution();
+            //CheatKey cheatKey = new CheatKey();
+            //cheatKey.Run("ThereIsNoCowLevel");
+            //cheatKey.Run("ShowMeTheMoney");
+            //cheatKey.Run("ShowMeThe12");
+            CardCount cardCount = new CardCount();
+            cardCount.Main();
         }
 
         static int[] solution(int n)
