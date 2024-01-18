@@ -32,9 +32,8 @@ namespace ConsoleApp1
             HideNumberSum running = new HideNumberSum();
             string[] str = { "mumu", "soe", "poe", "kai", "mine" };
             string[] call = { "kai", "kai", "mine", "mine" };
-            running.solution("1a2b3c4d123Z");
-            PriorityQueue<string, int> priorityQueue = new PriorityQueue<string, int>();
-
+            BinaryNumSum controll = new BinaryNumSum();
+            controll.solution("10010","11");
         }
         static void TestCode()
         {
