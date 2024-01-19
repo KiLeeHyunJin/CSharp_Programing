@@ -2,6 +2,7 @@
 using ConsoleApp1._2024_01_16;
 using ConsoleApp1._2024_01_17;
 using ConsoleApp1._2024_01_18;
+using ConsoleApp1._2024_01_19;
 using System.Drawing;
 
 namespace ConsoleApp1
@@ -48,8 +49,8 @@ namespace ConsoleApp1
             //cheatKey.Run("ThereIsNoCowLevel");
             //cheatKey.Run("ShowMeTheMoney");
             //cheatKey.Run("ShowMeThe12");
-            CardCount cardCount = new CardCount();
-            cardCount.Main();
+            Triangle cardCount = new Triangle();
+            cardCount.Run();
         }
 
         static int[] solution(int n)
