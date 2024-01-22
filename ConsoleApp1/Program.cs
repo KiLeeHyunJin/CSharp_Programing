@@ -49,7 +49,7 @@ namespace ConsoleApp1
             //cheatKey.Run("ThereIsNoCowLevel");
             //cheatKey.Run("ShowMeTheMoney");
             //cheatKey.Run("ShowMeThe12");
-            Triangle cardCount = new Triangle();
+            MapCheckTest cardCount = new MapCheckTest();
             cardCount.Run();
         }
 

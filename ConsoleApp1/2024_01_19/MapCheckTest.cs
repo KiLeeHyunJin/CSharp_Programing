@@ -46,7 +46,7 @@ namespace ConsoleApp1._2024_01_19
                 }
             }
 
-            SearchToMap( 0, 0, length, length);
+            Devide( 0, 0, length, length);
             Console.WriteLine(trueCount);
             Console.WriteLine(falseCount);
         }
@@ -54,7 +54,7 @@ namespace ConsoleApp1._2024_01_19
 
         public void SearchToMap(int startX, int startY, int sizeX, int sizeY)
         {
-            if (AllSameCheck(startX, startY, sizeX, sizeY))
+            if (IsAllColorMatch(startX, startY, sizeX, sizeY))
             {
                 if (map[startX, startY] == 1)
                     trueCount++;
@@ -91,9 +91,9 @@ namespace ConsoleApp1._2024_01_19
         {
             int check = map[startX, startY];//시작점의 체크값
 
-            for (int x = startX; x < startX + sizeX; x++)
-            {
-                for (int y = startY; y < startY + sizeY; y++)
+           for (int y = startY; y < startY + sizeY; y++)
+           {
+                for (int x = startX; x < startX + sizeX; x++)
                 {
                     if (map[x, y] != check) //체크값이 다르면 실패
                     {
