@@ -3,6 +3,7 @@ using ConsoleApp1._2024_01_16;
 using ConsoleApp1._2024_01_17;
 using ConsoleApp1._2024_01_18;
 using ConsoleApp1._2024_01_19;
+using ConsoleApp1._2024_01_23;
 using System.Drawing;
 
 namespace ConsoleApp1
@@ -49,8 +50,24 @@ namespace ConsoleApp1
             //cheatKey.Run("ThereIsNoCowLevel");
             //cheatKey.Run("ShowMeTheMoney");
             //cheatKey.Run("ShowMeThe12");
-            MapCheckTest cardCount = new MapCheckTest();
-            cardCount.Run();
+            bool[,] matrixGraph1 = new bool[8,8]
+           {
+                //0         1      2    3       4       5       6
+          /*0*/ { false, false, false, true, true,  false,  false , false },
+          /*1*/ { false, false, false,  true, false, true,  true , false },
+          /*2*/ { false, false,  false, false,  false, false, true, false },
+          /*3*/ {false,  true, false,  false, false,  true, false, true },
+          /*4*/ {true,   false, false, false,  false, false, true, false },
+          /*5*/ {false,   true, false, true,  false, false, true, true },
+          /*6*/ {false,   true,  true,  false,  false, true, false , true },
+          /*7*/ {false,   false,  false,  true,  false, true, true , false },
+           };
+            bool[] visit;// = new bool[6];
+            int[] parent;// = new int[6];
+            SelfMaking cardCount = new SelfMaking();
+
+            cardCount.BFS(matrixGraph1,0, out visit, out parent);
+            //Console.Read();
         }
 
         static int[] solution(int n)
