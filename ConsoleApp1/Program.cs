@@ -4,6 +4,7 @@ using ConsoleApp1._2024_01_17;
 using ConsoleApp1._2024_01_18;
 using ConsoleApp1._2024_01_19;
 using ConsoleApp1._2024_01_23;
+using ConsoleApp1._2024_01_24;
 using System.Drawing;
 
 namespace ConsoleApp1
@@ -62,12 +63,43 @@ namespace ConsoleApp1
           /*6*/ {false,   true,  true,  false,  false, true, false , true },
           /*7*/ {false,   false,  false,  true,  false, true, true , false },
            };
-            bool[] visit;// = new bool[6];
-            int[] parent;// = new int[6];
-            SelfMaking cardCount = new SelfMaking();
+            const int INF = 99999;
+            int[,] graph =
+{           //0   1    2  3   4  5   6   7   8   9   10  11  12  13  14  15  16  17
+           {INF,  6,  6,INF,INF,INF,INF,  7,INF,INF,INF,INF,INF,INF,INF,INF,INF, INF},//0
+           {  6,INF,INF,INF,INF,  9,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF, INF},//1
+           {  6,INF,INF,  7,INF,INF,  8,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF, INF},//2
+           {INF,INF,  7,INF,INF,INF,  8,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,   3},//3
+           {INF,INF,INF,INF,INF,  2,INF,  7,  8,INF,INF,INF,INF,INF,INF,INF,INF, INF},//4
+           {INF,INF,INF,INF,  2,INF,  1,INF,INF,  2,INF,INF,INF,INF,INF,INF,INF, INF},//5
+           {INF,INF,  8,  8,INF,  1,INF,INF,INF,  2,  8,INF,INF,INF,INF,INF,INF, INF},//6
+           {  7,INF,INF,INF,  7,INF,INF,INF,  4,INF,INF,  5,INF,INF,  5,INF,INF, INF},//7
+           {INF,INF,INF,INF,  8,INF,INF,  4,INF,  3,INF,INF,  4,INF,INF,INF,INF, INF},//8
+           {INF,INF,INF,INF,INF,  2,  2,INF,  3,INF,  5,INF,INF,INF,INF,INF,INF, INF},//9
+           {INF,INF,INF,INF,INF,INF,  8,INF,INF,  5,INF,INF,INF,INF,INF,INF,INF,   7},//10
+           {INF,INF,INF,INF,INF,INF,INF,  5,INF,INF,INF,INF,INF,INF,  3,INF,INF, INF},//11
+           {INF,INF,INF,INF,INF,INF,INF,INF,  4,  1,INF,INF,INF,INF,INF,  4,  7, INF},//12
+           {INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,  1, INF},//13
+           {INF,INF,INF,INF,INF,INF,INF,  5,INF,INF,INF,  3,INF,INF,INF,  2,INF, INF},//14
+           {INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,  4,INF,  2,INF,  3,   6},//15
+           {INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,  7,  1,INF,  3,INF, INF},//16
+           {INF,INF,INF,  3,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,  6,INF, INF}//17
+        };
 
-            cardCount.BFS(matrixGraph1,0, out visit, out parent);
-            //Console.Read();
+            Writing dijkstra = new Writing();
+            //dijkstra.Dijkstar(graph, 0, out int[] distance, out bool[] visited, out int[] parent);
+            Console.Write(countObvious(50));
+        }
+        static int countObvious(int n)
+        {
+            int same = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                double y = 1.0 / i;
+                if (y * i == 1.0)
+                    ++same;
+            }
+            return same;
         }
 
         static int[] solution(int n)
