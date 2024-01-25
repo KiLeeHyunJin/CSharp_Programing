@@ -5,6 +5,8 @@ using ConsoleApp1._2024_01_18;
 using ConsoleApp1._2024_01_19;
 using ConsoleApp1._2024_01_23;
 using ConsoleApp1._2024_01_24;
+using ConsoleApp1._2024_01_25;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace ConsoleApp1
@@ -64,31 +66,51 @@ namespace ConsoleApp1
           /*7*/ {false,   false,  false,  true,  false, true, true , false },
            };
             const int INF = 99999;
-            int[,] graph =
-{           //0   1    2  3   4  5   6   7   8   9   10  11  12  13  14  15  16  17
-           {INF,  6,  6,INF,INF,INF,INF,  7,INF,INF,INF,INF,INF,INF,INF,INF,INF, INF},//0
-           {  6,INF,INF,INF,INF,  9,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF, INF},//1
-           {  6,INF,INF,  7,INF,INF,  8,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF, INF},//2
-           {INF,INF,  7,INF,INF,INF,  8,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,   3},//3
-           {INF,INF,INF,INF,INF,  2,INF,  7,  8,INF,INF,INF,INF,INF,INF,INF,INF, INF},//4
-           {INF,INF,INF,INF,  2,INF,  1,INF,INF,  2,INF,INF,INF,INF,INF,INF,INF, INF},//5
-           {INF,INF,  8,  8,INF,  1,INF,INF,INF,  2,  8,INF,INF,INF,INF,INF,INF, INF},//6
-           {  7,INF,INF,INF,  7,INF,INF,INF,  4,INF,INF,  5,INF,INF,  5,INF,INF, INF},//7
-           {INF,INF,INF,INF,  8,INF,INF,  4,INF,  3,INF,INF,  4,INF,INF,INF,INF, INF},//8
-           {INF,INF,INF,INF,INF,  2,  2,INF,  3,INF,  5,INF,INF,INF,INF,INF,INF, INF},//9
-           {INF,INF,INF,INF,INF,INF,  8,INF,INF,  5,INF,INF,INF,INF,INF,INF,INF,   7},//10
-           {INF,INF,INF,INF,INF,INF,INF,  5,INF,INF,INF,INF,INF,INF,  3,INF,INF, INF},//11
-           {INF,INF,INF,INF,INF,INF,INF,INF,  4,  1,INF,INF,INF,INF,INF,  4,  7, INF},//12
-           {INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,  1, INF},//13
-           {INF,INF,INF,INF,INF,INF,INF,  5,INF,INF,INF,  3,INF,INF,INF,  2,INF, INF},//14
-           {INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,  4,INF,  2,INF,  3,   6},//15
-           {INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,  7,  1,INF,  3,INF, INF},//16
-           {INF,INF,INF,  3,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,INF,  6,INF, INF}//17
+            bool[,] graph = 
+{           //0         1        2      3    4          5    6       7       8        9     10      11      12       13     14      15      16        17
+          {false    ,true   ,true   ,true  ,false  ,false  ,false  ,false   ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false},//0
+
+          {true     ,false  ,false  ,true  ,false  ,true   ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false},//1
+
+          {true     ,false  ,false  ,true   ,true  ,true  ,false   ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false},//2
+
+          {false    ,false  ,false   ,false  ,false  ,true  ,false   ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false},//3
+
+          {false    ,false  ,false  ,false  ,false  ,true   ,false  ,false   ,false   ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false},//4
+
+          {false    ,false  ,false  ,false  ,true   ,true  ,false   ,false  ,false  ,false   ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false},//5
+
+          {false    ,false  ,false   ,false  ,true  ,true   ,false  ,false  ,false  ,false   ,false   ,false  ,false  ,true  ,true  ,true  ,true  ,false},//6
+
+          {false     ,false  ,false  ,false  ,true   ,true  ,false  ,false  ,true   ,true  ,true  ,true   ,false  ,true  ,true   ,false  ,true  ,false},//7
+
+          {false    ,false  ,false  ,false  ,true   ,true  ,false  ,false   ,false  ,true   ,false  ,true  ,false   ,true  ,false  ,false  ,true  ,false},//8
+
+          {false    ,false  ,false  ,false  ,false  ,true   ,true   ,false  ,false   ,true  ,false   ,true  ,true  ,true  ,false  ,false  ,true  ,false},//9
+
+          {false    ,false  ,false  ,false  ,false  ,false  ,true   ,true  ,true  ,false   ,false  ,true  ,false  ,true  ,false  ,false  ,true  ,true},//10
+
+          {false    ,false  ,false  ,false  ,false  ,false  ,false  ,true   ,true  ,false  ,false  ,true  ,false  ,true  ,true   ,false  ,true  ,false},//11
+
+          {false    ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,true   ,true   ,true  ,true  ,false  ,true  ,false  ,true   ,true   ,false},//12
+
+          {false    ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,true  ,false  ,true  ,false  ,false  ,true   ,false},//13
+
+          {false    ,false  ,false  ,false  ,false  ,false  ,false  ,false   ,false  ,false  ,false  ,true   ,true  ,true  ,false  ,true   ,true  ,false},//14
+
+          {false    ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,true   ,true  ,false   ,false  ,true   ,true},//15
+
+          {false    ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,true   ,true   ,false  ,true   ,true  ,false},//16
+
+          {false    ,false  ,false  ,false   ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,false  ,true   ,false  ,false}//17
         };
 
-            Writing dijkstra = new Writing();
-            //dijkstra.Dijkstar(graph, 0, out int[] distance, out bool[] visited, out int[] parent);
-            Console.Write(countObvious(50));
+            AStar dijkstra = new AStar();
+            _2024_01_25.Point start =  new _2024_01_25.Point(3, 1);
+            _2024_01_25.Point end =  new _2024_01_25.Point(16, 16);
+            List<_2024_01_25.Point> list = new List<_2024_01_25.Point>();
+            dijkstra._PathFinding(graph, start, end, out list);
+            //Console.Write(countObvious(50));
         }
         static int countObvious(int n)
         {
